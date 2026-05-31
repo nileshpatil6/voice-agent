@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --bg:        #F7F6F3;
+  --surface:   #FFFFFF;
+  --surface-2: #F2F1EE;
+  --border:    #E6E3DC;
+  --border-2:  #D5D1C8;
+  --ink:       #18171A;
+  --ink-2:     #6B6860;
+  --ink-3:     #A8A49C;
+  --indigo:    #5B5CF6;
+  --indigo-lt: #EEEEFF;
+  --green:     #15803D;
+  --green-lt:  #F0FDF4;
+  --red:       #DC2626;
+  --red-lt:    #FEF2F2;
+  --background: #F7F6F3;
+  --foreground: #18171A;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40%           { opacity: 1;    }
+}
+
+.transcript-entry { animation: fade-up 0.18s ease-out; }
+
+.blink-dot { display: inline-block; animation: blink 1.2s ease-in-out infinite; }
+.blink-dot:nth-child(2) { animation-delay: 0.2s; }
+.blink-dot:nth-child(3) { animation-delay: 0.4s; }
